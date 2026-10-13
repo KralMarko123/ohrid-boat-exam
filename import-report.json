@@ -1,0 +1,737 @@
+{
+  "questions": 315,
+  "sections": [
+    {
+      "id": "section-1",
+      "title": "Основи на навигација",
+      "sourceTitle": "1. Онови на навигација",
+      "count": 66
+    },
+    {
+      "id": "section-2",
+      "title": "Основи на пловидбата и пловидбени прописи",
+      "sourceTitle": "2. Основи на пловидбата и пловидбени прописи",
+      "count": 116
+    },
+    {
+      "id": "section-3",
+      "title": "Мотористика",
+      "sourceTitle": "3. Мотористика",
+      "count": 30
+    },
+    {
+      "id": "section-4",
+      "title": "Морнарски работи и вештини",
+      "sourceTitle": "4. Морнарски работи и вештини",
+      "count": 62
+    },
+    {
+      "id": "section-5",
+      "title": "Радио телефонска служба",
+      "sourceTitle": "5.Радио телефонска служба",
+      "count": 41
+    }
+  ],
+  "imageOccurrences": 214,
+  "uniqueImages": 117,
+  "normalizations": [
+    {
+      "id": "section-2-q20",
+      "kind": "source-number",
+      "sourceNumber": 19,
+      "displayNumber": 20
+    },
+    {
+      "id": "section-2-q21",
+      "kind": "source-number",
+      "sourceNumber": 20,
+      "displayNumber": 21
+    },
+    {
+      "id": "section-2-q22",
+      "kind": "source-number",
+      "sourceNumber": 21,
+      "displayNumber": 22
+    },
+    {
+      "id": "section-2-q23",
+      "kind": "source-number",
+      "sourceNumber": 22,
+      "displayNumber": 23
+    },
+    {
+      "id": "section-2-q24",
+      "kind": "source-number",
+      "sourceNumber": 23,
+      "displayNumber": 24
+    },
+    {
+      "id": "section-2-q25",
+      "kind": "source-number",
+      "sourceNumber": 24,
+      "displayNumber": 25
+    },
+    {
+      "id": "section-2-q26",
+      "kind": "source-number",
+      "sourceNumber": 25,
+      "displayNumber": 26
+    },
+    {
+      "id": "section-2-q27",
+      "kind": "source-number",
+      "sourceNumber": 26,
+      "displayNumber": 27
+    },
+    {
+      "id": "section-2-q28",
+      "kind": "source-number",
+      "sourceNumber": 27,
+      "displayNumber": 28
+    },
+    {
+      "id": "section-2-q29",
+      "kind": "source-number",
+      "sourceNumber": 28,
+      "displayNumber": 29
+    },
+    {
+      "id": "section-2-q30",
+      "kind": "source-number",
+      "sourceNumber": 29,
+      "displayNumber": 30
+    },
+    {
+      "id": "section-2-q31",
+      "kind": "source-number",
+      "sourceNumber": 30,
+      "displayNumber": 31
+    },
+    {
+      "id": "section-2-q32",
+      "kind": "source-number",
+      "sourceNumber": 31,
+      "displayNumber": 32
+    },
+    {
+      "id": "section-2-q33",
+      "kind": "source-number",
+      "sourceNumber": 32,
+      "displayNumber": 33
+    },
+    {
+      "id": "section-2-q34",
+      "kind": "source-number",
+      "sourceNumber": 33,
+      "displayNumber": 34
+    },
+    {
+      "id": "section-2-q35",
+      "kind": "source-number",
+      "sourceNumber": 34,
+      "displayNumber": 35
+    },
+    {
+      "id": "section-2-q36",
+      "kind": "source-number",
+      "sourceNumber": 35,
+      "displayNumber": 36
+    },
+    {
+      "id": "section-2-q37",
+      "kind": "source-number",
+      "sourceNumber": 36,
+      "displayNumber": 37
+    },
+    {
+      "id": "section-2-q38",
+      "kind": "source-number",
+      "sourceNumber": 37,
+      "displayNumber": 38
+    },
+    {
+      "id": "section-2-q39",
+      "kind": "source-number",
+      "sourceNumber": 38,
+      "displayNumber": 39
+    },
+    {
+      "id": "section-2-q40",
+      "kind": "source-number",
+      "sourceNumber": 39,
+      "displayNumber": 40
+    },
+    {
+      "id": "section-2-q41",
+      "kind": "source-number",
+      "sourceNumber": 40,
+      "displayNumber": 41
+    },
+    {
+      "id": "section-2-q42",
+      "kind": "source-number",
+      "sourceNumber": 41,
+      "displayNumber": 42
+    },
+    {
+      "id": "section-2-q43",
+      "kind": "source-number",
+      "sourceNumber": 42,
+      "displayNumber": 43
+    },
+    {
+      "id": "section-2-q44",
+      "kind": "source-number",
+      "sourceNumber": 43,
+      "displayNumber": 44
+    },
+    {
+      "id": "section-2-q45",
+      "kind": "source-number",
+      "sourceNumber": 44,
+      "displayNumber": 45
+    },
+    {
+      "id": "section-2-q46",
+      "kind": "source-number",
+      "sourceNumber": 45,
+      "displayNumber": 46
+    },
+    {
+      "id": "section-2-q47",
+      "kind": "source-number",
+      "sourceNumber": 46,
+      "displayNumber": 47
+    },
+    {
+      "id": "section-2-q48",
+      "kind": "source-number",
+      "sourceNumber": 47,
+      "displayNumber": 48
+    },
+    {
+      "id": "section-2-q49",
+      "kind": "source-number",
+      "sourceNumber": 48,
+      "displayNumber": 49
+    },
+    {
+      "id": "section-2-q50",
+      "kind": "source-number",
+      "sourceNumber": 49,
+      "displayNumber": 50
+    },
+    {
+      "id": "section-2-q51",
+      "kind": "source-number",
+      "sourceNumber": 50,
+      "displayNumber": 51
+    },
+    {
+      "id": "section-2-q52",
+      "kind": "source-number",
+      "sourceNumber": 51,
+      "displayNumber": 52
+    },
+    {
+      "id": "section-2-q53",
+      "kind": "source-number",
+      "sourceNumber": 52,
+      "displayNumber": 53
+    },
+    {
+      "id": "section-2-q54",
+      "kind": "source-number",
+      "sourceNumber": 53,
+      "displayNumber": 54
+    },
+    {
+      "id": "section-2-q55",
+      "kind": "source-number",
+      "sourceNumber": 54,
+      "displayNumber": 55
+    },
+    {
+      "id": "section-2-q56",
+      "kind": "source-number",
+      "sourceNumber": 55,
+      "displayNumber": 56
+    },
+    {
+      "id": "section-2-q57",
+      "kind": "source-number",
+      "sourceNumber": 56,
+      "displayNumber": 57
+    },
+    {
+      "id": "section-2-q58",
+      "kind": "source-number",
+      "sourceNumber": 57,
+      "displayNumber": 58
+    },
+    {
+      "id": "section-2-q59",
+      "kind": "source-number",
+      "sourceNumber": 58,
+      "displayNumber": 59
+    },
+    {
+      "id": "section-2-q60",
+      "kind": "source-number",
+      "sourceNumber": 59,
+      "displayNumber": 60
+    },
+    {
+      "id": "section-2-q61",
+      "kind": "source-number",
+      "sourceNumber": 60,
+      "displayNumber": 61
+    },
+    {
+      "id": "section-2-q62",
+      "kind": "source-number",
+      "sourceNumber": 61,
+      "displayNumber": 62
+    },
+    {
+      "id": "section-2-q63",
+      "kind": "source-number",
+      "sourceNumber": 62,
+      "displayNumber": 63
+    },
+    {
+      "id": "section-2-q64",
+      "kind": "source-number",
+      "sourceNumber": 63,
+      "displayNumber": 64
+    },
+    {
+      "id": "section-2-q65",
+      "kind": "source-number",
+      "sourceNumber": 64,
+      "displayNumber": 65
+    },
+    {
+      "id": "section-2-q66",
+      "kind": "source-number",
+      "sourceNumber": 65,
+      "displayNumber": 66
+    },
+    {
+      "id": "section-2-q67",
+      "kind": "source-number",
+      "sourceNumber": 66,
+      "displayNumber": 67
+    },
+    {
+      "id": "section-2-q68",
+      "kind": "source-number",
+      "sourceNumber": 67,
+      "displayNumber": 68
+    },
+    {
+      "id": "section-2-q69",
+      "kind": "source-number",
+      "sourceNumber": 68,
+      "displayNumber": 69
+    },
+    {
+      "id": "section-2-q70",
+      "kind": "source-number",
+      "sourceNumber": 69,
+      "displayNumber": 70
+    },
+    {
+      "id": "section-2-q71",
+      "kind": "source-number",
+      "sourceNumber": 70,
+      "displayNumber": 71
+    },
+    {
+      "id": "section-2-q72",
+      "kind": "source-number",
+      "sourceNumber": 71,
+      "displayNumber": 72
+    },
+    {
+      "id": "section-2-q73",
+      "kind": "source-number",
+      "sourceNumber": 72,
+      "displayNumber": 73
+    },
+    {
+      "id": "section-2-q74",
+      "kind": "source-number",
+      "sourceNumber": 73,
+      "displayNumber": 74
+    },
+    {
+      "id": "section-2-q75",
+      "kind": "source-number",
+      "sourceNumber": 74,
+      "displayNumber": 75
+    },
+    {
+      "id": "section-2-q76",
+      "kind": "source-number",
+      "sourceNumber": 75,
+      "displayNumber": 76
+    },
+    {
+      "id": "section-2-q77",
+      "kind": "source-number",
+      "sourceNumber": 76,
+      "displayNumber": 77
+    },
+    {
+      "id": "section-2-q78",
+      "kind": "source-number",
+      "sourceNumber": 77,
+      "displayNumber": 78
+    },
+    {
+      "id": "section-2-q79",
+      "kind": "source-number",
+      "sourceNumber": 78,
+      "displayNumber": 79
+    },
+    {
+      "id": "section-2-q80",
+      "kind": "source-number",
+      "sourceNumber": 79,
+      "displayNumber": 80
+    },
+    {
+      "id": "section-2-q81",
+      "kind": "source-number",
+      "sourceNumber": 80,
+      "displayNumber": 81
+    },
+    {
+      "id": "section-2-q82",
+      "kind": "source-number",
+      "sourceNumber": 81,
+      "displayNumber": 82
+    },
+    {
+      "id": "section-2-q83",
+      "kind": "source-number",
+      "sourceNumber": 82,
+      "displayNumber": 83
+    },
+    {
+      "id": "section-2-q84",
+      "kind": "source-number",
+      "sourceNumber": 83,
+      "displayNumber": 84
+    },
+    {
+      "id": "section-2-q85",
+      "kind": "source-number",
+      "sourceNumber": 84,
+      "displayNumber": 85
+    },
+    {
+      "id": "section-2-q86",
+      "kind": "source-number",
+      "sourceNumber": 85,
+      "displayNumber": 86
+    },
+    {
+      "id": "section-2-q87",
+      "kind": "source-number",
+      "sourceNumber": 86,
+      "displayNumber": 87
+    },
+    {
+      "id": "section-2-q88",
+      "kind": "source-number",
+      "sourceNumber": 87,
+      "displayNumber": 88
+    },
+    {
+      "id": "section-2-q89",
+      "kind": "source-number",
+      "sourceNumber": 88,
+      "displayNumber": 89
+    },
+    {
+      "id": "section-2-q90",
+      "kind": "source-number",
+      "sourceNumber": 99,
+      "displayNumber": 90
+    },
+    {
+      "id": "section-2-q91",
+      "kind": "source-number",
+      "sourceNumber": 90,
+      "displayNumber": 91
+    },
+    {
+      "id": "section-2-q92",
+      "kind": "source-number",
+      "sourceNumber": 91,
+      "displayNumber": 92
+    },
+    {
+      "id": "section-2-q93",
+      "kind": "source-number",
+      "sourceNumber": 92,
+      "displayNumber": 93
+    },
+    {
+      "id": "section-2-q94",
+      "kind": "source-number",
+      "sourceNumber": 93,
+      "displayNumber": 94
+    },
+    {
+      "id": "section-2-q95",
+      "kind": "source-number",
+      "sourceNumber": 94,
+      "displayNumber": 95
+    },
+    {
+      "id": "section-2-q96",
+      "kind": "source-number",
+      "sourceNumber": 95,
+      "displayNumber": 96
+    },
+    {
+      "id": "section-2-q97",
+      "kind": "source-number",
+      "sourceNumber": 96,
+      "displayNumber": 97
+    },
+    {
+      "id": "section-2-q98",
+      "kind": "source-number",
+      "sourceNumber": 97,
+      "displayNumber": 98
+    },
+    {
+      "id": "section-2-q99",
+      "kind": "source-number",
+      "sourceNumber": 98,
+      "displayNumber": 99
+    },
+    {
+      "id": "section-2-q100",
+      "kind": "source-number",
+      "sourceNumber": 99,
+      "displayNumber": 100
+    },
+    {
+      "id": "section-2-q101",
+      "kind": "source-number",
+      "sourceNumber": 100,
+      "displayNumber": 101
+    },
+    {
+      "id": "section-2-q102",
+      "kind": "source-number",
+      "sourceNumber": 101,
+      "displayNumber": 102
+    },
+    {
+      "id": "section-2-q103",
+      "kind": "source-number",
+      "sourceNumber": 102,
+      "displayNumber": 103
+    },
+    {
+      "id": "section-2-q104",
+      "kind": "source-number",
+      "sourceNumber": 103,
+      "displayNumber": 104
+    },
+    {
+      "id": "section-2-q105",
+      "kind": "source-number",
+      "sourceNumber": 104,
+      "displayNumber": 105
+    },
+    {
+      "id": "section-2-q106",
+      "kind": "source-number",
+      "sourceNumber": 105,
+      "displayNumber": 106
+    },
+    {
+      "id": "section-2-q107",
+      "kind": "source-number",
+      "sourceNumber": 106,
+      "displayNumber": 107
+    },
+    {
+      "id": "section-2-q108",
+      "kind": "source-number",
+      "sourceNumber": 107,
+      "displayNumber": 108
+    },
+    {
+      "id": "section-2-q109",
+      "kind": "source-number",
+      "sourceNumber": 108,
+      "displayNumber": 109
+    },
+    {
+      "id": "section-2-q110",
+      "kind": "source-number",
+      "sourceNumber": 109,
+      "displayNumber": 110
+    },
+    {
+      "id": "section-2-q111",
+      "kind": "source-number",
+      "sourceNumber": 110,
+      "displayNumber": 111
+    },
+    {
+      "id": "section-2-q112",
+      "kind": "source-number",
+      "sourceNumber": 111,
+      "displayNumber": 112
+    },
+    {
+      "id": "section-2-q113",
+      "kind": "source-number",
+      "sourceNumber": 112,
+      "displayNumber": 113
+    },
+    {
+      "id": "section-2-q114",
+      "kind": "source-number",
+      "sourceNumber": 113,
+      "displayNumber": 114
+    },
+    {
+      "id": "section-2-q115",
+      "kind": "source-number",
+      "sourceNumber": 114,
+      "displayNumber": 115
+    },
+    {
+      "id": "section-2-q116",
+      "kind": "source-number",
+      "sourceNumber": 115,
+      "displayNumber": 116
+    },
+    {
+      "id": "section-5-q1",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 1
+    },
+    {
+      "id": "section-5-q2",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 2
+    },
+    {
+      "id": "section-5-q3",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 3
+    },
+    {
+      "id": "section-5-q4",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 4
+    },
+    {
+      "id": "section-5-q5",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 5
+    },
+    {
+      "id": "section-5-q6",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 6
+    },
+    {
+      "id": "section-5-q7",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 7
+    },
+    {
+      "id": "section-5-q8",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 8
+    },
+    {
+      "id": "section-5-q9",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 9
+    },
+    {
+      "id": "section-5-q10",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 10
+    },
+    {
+      "id": "section-5-q11",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 11
+    },
+    {
+      "id": "section-5-q12",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 12
+    },
+    {
+      "id": "section-5-q13",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 13
+    },
+    {
+      "id": "section-5-q14",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 14
+    },
+    {
+      "id": "section-5-q15",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 15
+    },
+    {
+      "id": "section-5-q16",
+      "kind": "source-number",
+      "sourceNumber": null,
+      "displayNumber": 16
+    },
+    {
+      "id": "section-5-q39",
+      "kind": "source-number",
+      "sourceNumber": 38,
+      "displayNumber": 39
+    },
+    {
+      "id": "section-5-q40",
+      "kind": "source-number",
+      "sourceNumber": 39,
+      "displayNumber": 40
+    },
+    {
+      "id": "section-5-q41",
+      "kind": "source-number",
+      "sourceNumber": 40,
+      "displayNumber": 41
+    }
+  ],
+  "floatingImageParagraphsReordered": [477, 508],
+  "answerPolicy": "Exact yellow highlights from the supplied document. No factual corrections."
+}
