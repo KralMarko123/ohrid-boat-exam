@@ -1,4 +1,4 @@
-export const QUIZ_SIZE = 20;
+export const QUIZ_SIZE = 30;
 export const PASS_PERCENT = 70;
 
 export function selectQuestions(

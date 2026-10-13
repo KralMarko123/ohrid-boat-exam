@@ -1,2 +1,7 @@
 import { defineConfig } from 'vite';
-export default defineConfig({ base: './' });
+
+const pagesBase = process.env.PAGES_BASE_PATH;
+
+export default defineConfig({
+  base: pagesBase ? `${pagesBase.replace(/\/$/, '')}/` : './',
+});

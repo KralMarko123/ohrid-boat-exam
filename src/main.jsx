@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import bank from "./data/questions.json";
-import { selectQuestions, scoreQuiz } from "./quiz.mjs";
+import { QUIZ_SIZE, PASS_PERCENT, selectQuestions, scoreQuiz } from "./quiz.mjs";
 import "./styles.css";
 
+const minCorrect = Math.ceil((QUIZ_SIZE * PASS_PERCENT) / 100);
 const letters = ["А", "Б", "В"];
 const sections = bank.sections;
 const sectionFor = (id) => sections.find((s) => s.id === id);
@@ -199,7 +200,7 @@ function Home() {
               <span>тематски области</span>
             </div>
             <div>
-              <strong>20</strong>
+              <strong>{QUIZ_SIZE}</strong>
               <span>прашања по квиз</span>
             </div>
           </div>
@@ -255,8 +256,8 @@ function Home() {
               <Icon name="waves" size={30} />
               <h3>Подготвен за пробен испит?</h3>
               <p>
-                20 случајни прашања. Резултат на крај. За положување се потребни
-                14 точни одговори.
+                {QUIZ_SIZE} случајни прашања. Резултат на крај. За положување се потребни{" "}
+                {minCorrect} точни одговори.
               </p>
               <span className="card-link">
                 Направи пробен испит <Icon name="arrow" size={18} />
@@ -494,7 +495,7 @@ function QuizSetup({ mode, setMode, onStart }) {
       <p className="eyebrow">ТВОЈОТ СЛЕДЕН ЧЕКОР</p>
       <h1>Провери го знаењето.</h1>
       <p className="intro">
-        20 случајно избрани прашања од сите пет области.
+        {QUIZ_SIZE} случајно избрани прашања од сите пет области.
         <br />
         Избери како сакаш да учиш денес.
       </p>
@@ -535,8 +536,8 @@ function QuizSetup({ mode, setMode, onStart }) {
           <Icon name="check" size={17} />
           Без тајмер
         </span>
-        <span>20 прашања</span>
-        <span>Праг за положување: 70%</span>
+        <span>{QUIZ_SIZE} прашања</span>
+        <span>Праг за положување: {PASS_PERCENT}%</span>
       </div>
       <button className="button primary start-button" onClick={onStart}>
         Започни {mode === "exam" ? "пробен испит" : "со вежбање"}
@@ -582,6 +583,8 @@ function Quiz({ route, session, setSession }) {
       </div>
     );
   const { questions, answers, checked, index, finished } = session;
+  const total = questions.length;
+  const requiredCorrect = Math.ceil((total * PASS_PERCENT) / 100);
   const isPractice = session.mode === "practice";
   const completed = questions.filter((q) =>
     isPractice ? checked[q.id] : answers[q.id],
@@ -608,11 +611,11 @@ function Quiz({ route, session, setSession }) {
           <div className="score-display">
             <strong>
               {score.correct}
-              <span> / 20</span>
+              <span> / {total}</span>
             </strong>
             <div>
               <b>{score.percentage}% точност</b>
-              <span>Праг за положување: 70% (14/20)</span>
+              <span>Праг за положување: {PASS_PERCENT}% ({requiredCorrect}/{total})</span>
             </div>
           </div>
           <div className="actions">
@@ -627,13 +630,13 @@ function Quiz({ route, session, setSession }) {
         <div className="section-heading">
           <h2>Преглед на твоите одговори</h2>
           <span>
-            {score.correct} точни · {20 - score.correct} неточни
+            {score.correct} точни · {total - score.correct} неточни
           </span>
         </div>
         {questions.map((q, i) => (
           <article className="study-question" key={q.id}>
             <p className="question-label">
-              ПРАШАЊЕ {i + 1} / 20 · {sectionFor(q.sectionId).title}
+              ПРАШАЊЕ {i + 1} / {total} · {sectionFor(q.sectionId).title}
             </p>
             <h3>{q.text}</h3>
             <QuestionImages paths={q.images} />
@@ -654,11 +657,11 @@ function Quiz({ route, session, setSession }) {
           <p className="eyebrow">{isPractice ? "ВЕЖБАЊЕ" : "ПРОБЕН ИСПИТ"}</p>
           <h1>
             Прашање {index + 1}
-            <span> / 20</span>
+            <span> / {total}</span>
           </h1>
         </div>
         <span className="completion-count">
-          {completed} / 20 {isPractice ? "проверени" : "одговорени"}
+          {completed} / {total} {isPractice ? "проверени" : "одговорени"}
         </span>
       </div>
       <div
@@ -666,10 +669,10 @@ function Quiz({ route, session, setSession }) {
         role="progressbar"
         aria-label="Напредок на квизот"
         aria-valuemin={0}
-        aria-valuemax={20}
+        aria-valuemax={total}
         aria-valuenow={completed}
       >
-        <span style={{ width: `${completed * 5}%` }} />
+        <span style={{ width: `${(completed / total) * 100}%` }} />
       </div>
       <div className="quiz-layout">
         <div>
@@ -744,7 +747,7 @@ function Quiz({ route, session, setSession }) {
             >
               ← Претходно
             </button>
-            {index < 19 ? (
+            {index < total - 1 ? (
               <button
                 className="button primary"
                 onClick={() => move(index + 1)}
@@ -754,7 +757,7 @@ function Quiz({ route, session, setSession }) {
             ) : (
               <button
                 className="button primary"
-                disabled={completed !== 20}
+                disabled={completed !== total}
                 onClick={() => {
                   setSession((s) => ({ ...s, finished: true }));
                   window.scrollTo(0, 0);
@@ -764,10 +767,10 @@ function Quiz({ route, session, setSession }) {
               </button>
             )}
           </div>
-          {index === 19 && completed < 20 && (
+          {index === total - 1 && completed < total && (
             <p className="completion-hint" role="status">
-              {isPractice ? "Провери" : "Одговори на"} ги сите 20 прашања за да
-              го завршиш квизот. Преостануваат {20 - completed}.
+              {isPractice ? "Провери" : "Одговори на"} ги сите {total} прашања за да
+              го завршиш квизот. Преостануваат {total - completed}.
             </p>
           )}
         </div>
@@ -805,7 +808,7 @@ function Quiz({ route, session, setSession }) {
           <p>
             <strong>Без временски притисок.</strong>
             <br />
-            За положување се потребни најмалку 14 точни одговори.
+            За положување се потребни најмалку {requiredCorrect} точни одговори.
           </p>
         </aside>
       </div>

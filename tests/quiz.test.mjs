@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { selectQuestions, scoreQuiz } from '../src/quiz.mjs';
+import { QUIZ_SIZE, selectQuestions, scoreQuiz } from '../src/quiz.mjs';
 const bank = JSON.parse(readFileSync(new URL('../src/data/questions.json', import.meta.url)));
 
 test('all 315 source questions have one marked answer and valid media', () => {
@@ -33,15 +33,16 @@ test('image-only answer mapping preserves source order and highlighted labels', 
   assert.equal(motor[0].options[0].images[0], motor[1].options[1].images[0]);
 });
 
-test('sampling returns 20 unique questions without changing the question bank', () => {
+test('sampling returns 30 unique questions without changing the question bank', () => {
+  assert.equal(QUIZ_SIZE, 30);
   const original = bank.questions.map(q => q.id);
   for (let i = 0; i < 100; i++) {
     const sample = selectQuestions(bank.questions);
-    assert.equal(sample.length, 20);
-    assert.equal(new Set(sample.map(q => q.id)).size, 20);
+    assert.equal(sample.length, 30);
+    assert.equal(new Set(sample.map(q => q.id)).size, 30);
   }
   assert.deepEqual(bank.questions.map(q => q.id), original);
-  assert.throws(() => selectQuestions([], 20), RangeError);
+  assert.throws(() => selectQuestions([], 30), RangeError);
 });
 
 test('floating image answers follow the left-to-right Word layout, not drawing storage order', () => {
@@ -56,14 +57,14 @@ test('floating image answers follow the left-to-right Word layout, not drawing s
   }
 });
 
-test('70% boundary is exactly 14 out of 20; unanswered questions do not score', () => {
-  const questions = bank.questions.slice(0, 20);
+test('70% boundary is exactly 21 out of 30; unanswered questions do not score', () => {
+  const questions = bank.questions.slice(0, 30);
   const answers = {};
-  assert.deepEqual(scoreQuiz(questions, answers), { correct: 0, total: 20, percentage: 0, passed: false });
-  for (let i = 0; i < 13; i++) answers[questions[i].id] = questions[i].options.find(o => o.correct).id;
+  assert.deepEqual(scoreQuiz(questions, answers), { correct: 0, total: 30, percentage: 0, passed: false });
+  for (let i = 0; i < 20; i++) answers[questions[i].id] = questions[i].options.find(o => o.correct).id;
   assert.equal(scoreQuiz(questions, answers).passed, false);
-  answers[questions[13].id] = questions[13].options.find(o => o.correct).id;
-  assert.deepEqual(scoreQuiz(questions, answers), { correct: 14, total: 20, percentage: 70, passed: true });
+  answers[questions[20].id] = questions[20].options.find(o => o.correct).id;
+  assert.deepEqual(scoreQuiz(questions, answers), { correct: 21, total: 30, percentage: 70, passed: true });
   for (const q of questions) answers[q.id] = q.options.find(o => o.correct).id;
   assert.equal(scoreQuiz(questions, answers).percentage, 100);
 });

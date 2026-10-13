@@ -6,10 +6,10 @@ I wanted to turn a pretty dull Word document full of boat exam questions into so
 
 You can browse the 315 questions across five topics, search for a specific term, or download the original document. There are also two quiz modes:
 
-- **Exam:** answer 20 random questions, then see your score and review your answers.
+- **Exam:** answer 30 random questions, then see your score and review your answers.
 - **Practice:** check each answer as you go.
 
-The passing score is 70% (14 out of 20). Refreshing the page resets the current quiz.
+The passing score is 70% (21 out of 30). Refreshing the page resets the current quiz.
 
 ## Run locally
 
@@ -29,6 +29,12 @@ npm run preview
 ```
 
 The build goes into `dist/`, ready for static hosting.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` tests and publishes the site whenever changes are pushed to `main`. It can also be run manually from the Actions tab.
+
+In the repository settings, choose **Pages → Source → GitHub Actions**. The site will be available at [kralmarko123.github.io/ohrid-boat-exam](https://kralmarko123.github.io/ohrid-boat-exam/).
 
 ## About the questions
 
