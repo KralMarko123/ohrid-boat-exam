@@ -24,6 +24,7 @@ Open the local URL printed in the terminal.
 
 ```sh
 npm test
+python -m unittest discover -s tests -p "test_*.py"
 npm run build
 npm run preview
 ```
@@ -38,13 +39,19 @@ In the repository settings, choose **Pages → Source → GitHub Actions**. The 
 
 ## About the questions
 
-The questions, images, and marked answers come from the original Word document. I've kept the content as written, with minor cleanup to numbering and labels.
+The questions, images, and marked answers come from the original Word document. I've corrected spelling and punctuation while keeping the wording and marked answers. Unclear wording is listed separately in `docs/wording-review.md`.
 
-The question bank lives in `src/data/questions.json`. To import an updated document and check the mapping, use Python and the following scripts:
+The question bank lives in `src/data/questions.json`. Edit the JSON directly for text corrections. The source audit allows text edits but still checks answer highlights, option counts, image order, and source coverage:
+
+```sh
+python scripts/verify_source_mapping.py
+```
+
+Re-importing replaces the JSON and its manual corrections. Only use this when intentionally starting from an updated document:
 
 ```sh
 python scripts/import_document.py "path/to/document.docx"
-python scripts/verify_source_mapping.py
+python scripts/verify_source_mapping.py --strict-text
 npm test
 ```
 

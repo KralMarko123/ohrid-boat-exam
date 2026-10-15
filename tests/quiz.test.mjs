@@ -68,3 +68,16 @@ test('70% boundary is exactly 21 out of 30; unanswered questions do not score', 
   for (const q of questions) answers[q.id] = q.options.find(o => o.correct).id;
   assert.equal(scoreQuiz(questions, answers).percentage, 100);
 });
+
+test('question text uses clean punctuation while preserving numeric notation', () => {
+  for (const q of bank.questions) {
+    for (const item of [q, ...q.options]) {
+      assert.doesNotMatch(item.text, /\s[,;:?!]/u, q.id);
+      assert.doesNotMatch(item.text, /(?<!\d),(?! )|,(?!\d| [^ ])/u, q.id);
+    }
+  }
+  const question = id => bank.questions.find(q => q.id === id);
+  assert.equal(question('section-1-q35').options[1].text, '1,5 метри');
+  assert.equal(question('section-1-q58').options[0].text, '1:10.000 и 1:5.000');
+  assert.equal(question('section-1-q56').options.length, 3);
+});

@@ -1,4 +1,5 @@
-"""Audit exported text, yellow answer marks, and image order against source OOXML."""
+"""Audit source coverage, answer marks and images; report editorial text differences."""
+import argparse
 import hashlib
 import json
 import re
@@ -7,7 +8,18 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 project = Path(__file__).resolve().parents[1]
-bank = json.loads((project / 'src/data/questions.json').read_text(encoding='utf-8'))
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--bank', type=Path, default=project / 'src/data/questions.json')
+parser.add_argument('--strict-text', action='store_true', help='Also require unedited source text (for fresh imports).')
+args = parser.parse_args()
+bank = json.loads(args.bank.read_text(encoding='utf-8'))
+text_edits = []
+
+def check_text(expected, actual, question_id, field):
+    if expected != actual:
+        text_edits.append({'question': question_id, 'field': field})
+        if args.strict_text:
+            raise AssertionError(('source-text', question_id, field))
 source = project / 'public' / bank['source']['download']
 assert hashlib.sha256(source.read_bytes()).hexdigest() == bank['source']['sha256']
 ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
@@ -55,15 +67,15 @@ with zipfile.ZipFile(source) as archive:
                 image = drawing.find('.//a:blip', ns)
                 rid = image.get('{' + ns['r'] + '}embed')
                 image_paths.append('images/' + Path(relations[rid]).name)
-        labels = list(re.finditer(r'(?<!\S)[АБВГABC]\s*\.', raw))
+        labels = list(re.finditer(r'(?:(?<!\S)|(?<=информации за пловни патишта))[АБВГABC]\s*\.', raw))
         assert len(labels) == len(question['options']), question['id']
         prompt = re.sub(r'^\s*\d+\s*\.\s*', '', raw[:labels[0].start()])
-        assert normalize(prompt) == question['text'], ('question-text', question['id'])
+        check_text(normalize(prompt), question['text'], question['id'], 'text')
         for i, label in enumerate(labels):
             stop = labels[i + 1].start() if i + 1 < len(labels) else len(raw)
             option = question['options'][i]
             expected_text = normalize(raw[label.end():stop])
-            assert expected_text == option['text'], ('answer-text', question['id'], i)
+            check_text(expected_text, option['text'], question['id'], option['id'])
             expected_correct = any(marked[j] and not raw[j].isspace() for j in range(label.start(), stop))
             assert expected_correct == option['correct'], ('highlight', question['id'], i)
             text_checks += 1
@@ -76,5 +88,5 @@ with zipfile.ZipFile(source) as archive:
             assert not text or text in headings, ('unmapped-source-paragraph', i, text)
 
 print(json.dumps({'status': 'passed', 'questions': len(bank['questions']),
-    'answerTextsAndHighlights': text_checks, 'imageOccurrences': image_checks,
+    'answerHighlights': text_checks, 'editedTextFields': len(text_edits), 'imageOccurrences': image_checks,
     'floatingImageRowsChecked': floating_checks, 'unmappedSourceParagraphs': 0}, indent=2))
