@@ -39,7 +39,7 @@ In the repository settings, choose **Pages → Source → GitHub Actions**. The 
 
 ## About the questions
 
-The questions, images, and marked answers come from the original Word document. I've corrected spelling and punctuation while keeping the wording and marked answers. Unclear wording is listed separately in `docs/wording-review.md`.
+The questions, images, and marked answers come from the original Word document. I've cleaned up spelling, punctuation, and wording while preserving the marked answers.
 
 The question bank lives in `src/data/questions.json`. Edit the JSON directly for text corrections. The source audit allows text edits but still checks answer highlights, option counts, image order, and source coverage:
 
